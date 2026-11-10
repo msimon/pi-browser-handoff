@@ -1,0 +1,63 @@
+{
+  "name": "@msimon/pi-browser-handoff",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Hand a website login from the cmux browser to headless agent-browser: you sign in once in a cmux pane, pi copies only that site's cookies into a named agent-browser session that scheduled jobs reuse.",
+  "author": "Marc Simon",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/msimon/pi-browser-handoff.git"
+  },
+  "homepage": "https://github.com/msimon/pi-browser-handoff#readme",
+  "keywords": [
+    "pi-package",
+    "pi",
+    "pi-extension",
+    "pi-coding-agent",
+    "cmux",
+    "agent-browser",
+    "browser-automation"
+  ],
+  "files": [
+    "src/**/*",
+    "!src/**/*.test.ts",
+    "skills/**/*",
+    "README.md",
+    "LICENSE"
+  ],
+  "pi": {
+    "extensions": [
+      "./src/index.ts"
+    ],
+    "skills": [
+      "./skills"
+    ]
+  },
+  "scripts": {
+    "test": "node --test --experimental-strip-types 'src/**/*.test.ts'",
+    "typecheck": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-ai": "*",
+    "@earendil-works/pi-coding-agent": "*",
+    "typebox": "*"
+  },
+  "peerDependenciesMeta": {
+    "@earendil-works/pi-ai": {
+      "optional": true
+    },
+    "@earendil-works/pi-coding-agent": {
+      "optional": true
+    },
+    "typebox": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@earendil-works/pi-ai": "^0.85.1",
+    "@earendil-works/pi-coding-agent": "^0.85.1",
+    "@types/node": "^22.20.0",
+    "typescript": "^5.9.3"
+  }
+}
